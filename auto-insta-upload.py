@@ -31,7 +31,7 @@ def scheduled_upload():
     time.sleep(10)
     USERNAME = str(os.getenv('USERNAME1'))
     PASSWORD = str(os.getenv('PASSWORD1'))
-    SESSION = get_session_dict_from_env(os.getenv('SESSION1'))
+    SESSION = (os.getenv('SESSION1'))
     Insta = Client()
     Insta.load_settings(SESSION)
     Insta.login(USERNAME, PASSWORD)
