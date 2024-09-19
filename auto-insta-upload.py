@@ -31,9 +31,8 @@ def scheduled_upload():
     time.sleep(10)
     USERNAME = str(os.getenv('USERNAME1'))
     PASSWORD = str(os.getenv('PASSWORD1'))
-    SESSION = get_session_dict_from_env(os.getenv('SESSION1'))
+#    SESSION = get_session_dict_from_env(os.getenv('SESSION1'))
     Insta = Client()
-    Insta.set_settings(SESSION)
     Insta.login(USERNAME, PASSWORD)
     DAY = get_days(Insta)
     PATH = "grandpa.mp4"
@@ -44,9 +43,8 @@ def scheduled_upload_benson():
     time.sleep(10)
     USERNAME = str(os.getenv('USERNAME2'))
     PASSWORD = str(os.getenv('PASSWORD2'))
-    SESSION = get_session_dict_from_env(os.getenv('SESSION2'))
+#    SESSION = get_session_dict_from_env(os.getenv('SESSION2'))
     Insta = Client()
-    Insta.set_settings(SESSION)
     Insta.login(USERNAME, PASSWORD)
     DAY = get_days(Insta)
     PATH = "video.mp4"
