@@ -13,12 +13,14 @@ def get_session_dict_from_env(env_var):
     return {}
 
 def get_days():
-    if "DAYS" in os.listdir(os.getcwd()):
-        with open("DAYS", 'r') as file:
-            day = file.readline()
-        with open("DAYS", "w") as file:
-            file.write(str(int(day) + 1))
-    return int(day)
+    global bot
+    bot.user_clips(bot.user_id,1)
+    media = bot.user_clips(bot.user_id,1)
+    latest = media[0]
+    dict_media = latest.dict()
+    cap = dict_media['caption_text']
+    day = [d for d in cap[:15] if d.isdigit()]
+    return int(''.join(day))+1
 
 DAY = get_days()
 
