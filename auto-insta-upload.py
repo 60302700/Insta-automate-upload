@@ -12,14 +12,13 @@ def get_session_dict_from_env(env_var):
             print(f"Error decoding session data: {e}")
     return {}
 
-def get_days(bot):
-    bot.user_clips(bot.user_id,1)
-    media = bot.user_clips(bot.user_id,1)
-    latest = media[0]
-    dict_media = latest.dict()
-    cap = dict_media['caption_text']
-    day = [d for d in cap[:15] if d.isdigit()]
-    return int(''.join(day))+1
+    def get_days(bot):
+        media = bot.user_medias(bot.user_id,1)
+        latest = media[0]
+        dict_media = latest.dict()
+        cap = dict_media['caption_text']
+        day = [d for d in cap[:15] if d.isdigit()]
+        return int(''.join(day))+1
 
 def video_upload(PATH, CAPTION,bot):
     time.sleep(5)
