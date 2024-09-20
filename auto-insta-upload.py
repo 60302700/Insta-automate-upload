@@ -25,14 +25,10 @@ def get_session_dict_from_env(env_var):
 
 def get_days(bot,id):
     media = bot.user_medias(id,1)
-    print(type(media))
-    print(list(media))
-    print(media.caption_text)
-    day = [d for d in cap[:15] if d.isdigit()]
-    return int(''.join(day))+1
-
-
-
+    vid = media[0].dict()['caption_text']
+    days = int(vid[vid.find(' '):vid.find('#meme')])
+    return day
+    
 def video_upload(PATH, CAPTION,bot,id):
     time.sleep(5)
     print(f"Logging in as {bot.user_id}")
