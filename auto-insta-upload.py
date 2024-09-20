@@ -57,7 +57,7 @@ def scheduled_upload_benson():
     SESSION = get_session_dict_from_env(os.getenv('SESSION2'))
     id = 67538479126
     Insta = Client()
-    Insta.login(USERNAME, PASSWORD,verification_code=674789)
+    Insta.login(USERNAME, PASSWORD) #674789
     Insta.set_settings(SESSION)
     DAY = get_days(Insta,id)
     PATH = "video.mp4"
