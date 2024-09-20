@@ -13,17 +13,12 @@ def get_session_dict_from_env(env_var):
             print(f"Error decoding session data: {e}")
     return {}
 def get_days(user):
-h = requests.get(f'https://www.instagram.com/{user}')
-
-soup = BeautifulSoup(h.text,'html.parser')
-
-posts = soup.find('meta',property="og:description")
-
-posts = posts.get('content')
-
-posts = posts[1:posts.find('Posts')]
-
-return int((posts.split()[-1]))
+    h = requests.get(f'https://www.instagram.com/{user}')
+    soup = BeautifulSoup(h.text,'html.parser')
+    posts = soup.find('meta',property="og:description")
+    posts = posts.get('content')
+    posts = posts[1:posts.find('Posts')]
+    return int((posts.split()[-1]))
 
 
 
