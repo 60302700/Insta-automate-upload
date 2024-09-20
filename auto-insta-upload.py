@@ -26,6 +26,7 @@ def video_upload(PATH, CAPTION,bot):
     print(f"Logging in as {bot.user_id}")
     bot.clip_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
+    bot.logout()
 
 def scheduled_upload():
     time.sleep(10)
