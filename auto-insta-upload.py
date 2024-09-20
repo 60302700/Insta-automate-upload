@@ -57,11 +57,11 @@ def scheduled_upload_benson():
     SESSION = get_session_dict_from_env(os.getenv('SESSION2'))
     id = 67538479126
     Insta = Client()
-    Insta.set_settings(SESSION)
     Insta.login(USERNAME, PASSWORD)
+    Insta.set_settings(SESSION)
     DAY = get_days(Insta,id)
     PATH = "video.mp4"
     CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
-    video_upload(PATH, CAPTION,Insta)
-scheduled_upload()
-#scheduled_upload_benson()
+    video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
+#scheduled_upload()
+scheduled_upload_benson()
