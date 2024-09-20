@@ -29,10 +29,15 @@ def get_days(bot,id):
     days = int(vid[vid.find(' '):vid.find('#meme')])
     return days
     
-def video_upload(PATH, CAPTION,bot,user):
+def video_upload(PATH, CAPTION,bot,user,password):
     time.sleep(5)
     print(f"Logging in as {user}")
-    bot.video_upload(PATH, CAPTION)
+    for i in range(3):
+        try:
+            bot.video_upload(PATH, CAPTION)
+        except VideoNotUpload:
+            bot.login(user,password)
+            print(i)
     print(f"Video uploaded: {PATH}")
 
 def scheduled_upload():
@@ -47,7 +52,7 @@ def scheduled_upload():
     DAY = get_days(Insta,id)
     PATH = "grandpa.mp4"
     CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
-    video_upload(PATH, CAPTION,Insta,USERNAME)
+    video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
 
 def scheduled_upload_benson():
     time.sleep(10)
