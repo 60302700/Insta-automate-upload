@@ -16,9 +16,7 @@ def get_days(user):
     h = requests.get(f'https://www.instagram.com/{user}')
     soup = BeautifulSoup(h.text,'html.parser')
     posts = soup.find('meta',property="og:description")
-    print(soup)
-    print(posts)
-    posts = posts.get('content')
+    posts = posts.prettify()
     posts = posts[1:posts.find('Posts')]
     return int((posts.split()[-1]))
 
