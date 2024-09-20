@@ -27,8 +27,7 @@ def get_days(bot,id):
     media = bot.user_medias(id,1)
     print(type(media))
     print(list(media))
-    for i in media:
-        print(i)
+    print(media.caption_text)
     day = [d for d in cap[:15] if d.isdigit()]
     return int(''.join(day))+1
 
