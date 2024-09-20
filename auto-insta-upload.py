@@ -27,7 +27,7 @@ def get_days(bot,id):
     media = bot.user_medias(id,1)
     vid = media[0].dict()['caption_text']
     days = int(vid[vid.find(' '):vid.find('#meme')])
-    return day
+    return days
     
 def video_upload(PATH, CAPTION,bot,id):
     time.sleep(5)
