@@ -12,14 +12,6 @@ def get_session_dict_from_env(env_var):
             print(f"Error decoding session data: {e}")
     return {}
 
-def get_days(bot):
-    media = bot.user_medias(bot.user_id,1)
-    latest = media[0]
-    dict_media = latest.dict()
-    cap = dict_media['caption_text']
-    day = [d for d in cap[:15] if d.isdigit()]
-    return int(''.join(day))+1
-
 def video_upload(PATH, CAPTION,bot):
     time.sleep(5)
     print(f"Logging in as {bot.user_id}")
@@ -35,7 +27,9 @@ def scheduled_upload():
     Insta = Client()
     Insta.login(USERNAME, PASSWORD)
     Insta.set_settings(SESSION)
-    DAY = get_days(Insta)
+    x = Insta.user_id
+    if x:
+        print(x)
     PATH = "grandpa.mp4"
     CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
     video_upload(PATH, CAPTION,Insta)
