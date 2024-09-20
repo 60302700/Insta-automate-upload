@@ -21,7 +21,7 @@ def get_days(bot):
     day = [d for d in cap[:15] if d.isdigit()]
     return int(''.join(day))+1
 
-def video_upload(PATH, CAPTION,SESSION,bot):
+def video_upload(PATH, CAPTION,bot):
     time.sleep(5)
     print(f"Logging in as {bot.user_id}")
     bot.clip_upload(PATH, CAPTION)
@@ -34,10 +34,11 @@ def scheduled_upload():
     SESSION = get_session_dict_from_env(os.getenv('SESSION1'))
     Insta = Client()
     Insta.login(USERNAME, PASSWORD)
+    Insta.set_settings(SESSION)
     DAY = get_days(Insta)
     PATH = "grandpa.mp4"
     CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
-    video_upload(PATH, CAPTION,SESSION,Insta)
+    video_upload(PATH, CAPTION,Insta)
 
 def scheduled_upload_benson():
     time.sleep(10)
@@ -46,9 +47,10 @@ def scheduled_upload_benson():
     SESSION = get_session_dict_from_env(os.getenv('SESSION2'))
     Insta = Client()
     Insta.login(USERNAME, PASSWORD)
+    Insta.set_settings(SESSION)
     DAY = get_days(Insta)
     PATH = "video.mp4"
     CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
-    video_upload(PATH, CAPTION,SESSION,Insta)
+    video_upload(PATH, CAPTION,Insta)
 scheduled_upload()
 scheduled_upload_benson()
