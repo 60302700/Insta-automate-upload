@@ -33,7 +33,7 @@ def get_days(bot,id):
 
 
 
-def video_upload(PATH, CAPTION,bot):
+def video_upload(PATH, CAPTION,bot,id):
     time.sleep(5)
     print(f"Logging in as {bot.user_id}")
     bot.video_upload(PATH, CAPTION)
@@ -60,8 +60,8 @@ def scheduled_upload_benson():
     SESSION = get_session_dict_from_env(os.getenv('SESSION2'))
     id = 67538479126
     Insta = Client()
-    Insta.login(USERNAME, PASSWORD)
     Insta.set_settings(SESSION)
+    Insta.login(USERNAME, PASSWORD)
     DAY = get_days(Insta,id)
     PATH = "video.mp4"
     CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
