@@ -25,7 +25,8 @@ def get_session_dict_from_env(env_var):
 
 def get_days(bot,id):
     media = bot.user_medias(id,1)
-    latest = media[0]
+    print(media)
+    latest = media
     dict_media = latest.dict()
     cap = dict_media['caption_text']
     day = [d for d in cap[:15] if d.isdigit()]
