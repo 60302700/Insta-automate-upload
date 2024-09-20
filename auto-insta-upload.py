@@ -28,7 +28,7 @@ def scheduled_upload():
     Insta.login(USERNAME, PASSWORD)
     Insta.set_settings(SESSION)
     PATH = "grandpa.mp4"
-    CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
+    CAPTION = f'''DAY test \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
     video_upload(PATH, CAPTION,Insta)
 
 def scheduled_upload_benson():
