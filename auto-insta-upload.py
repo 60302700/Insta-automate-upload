@@ -22,6 +22,7 @@ def get_session_dict_from_env(env_var):
     posts = posts.prettify()
     posts = posts[1:posts.find('Posts')]
     return int((posts.split()[-1]))'''
+
 def get_days(bot,id):
     media = bot.user_medias(id,1)
     latest = media[0]
@@ -35,7 +36,7 @@ def get_days(bot,id):
 def video_upload(PATH, CAPTION,bot):
     time.sleep(5)
     print(f"Logging in as {bot.user_id}")
-    bot.clip_upload(PATH, CAPTION)
+    bot.video_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
     bot.logout()
 
