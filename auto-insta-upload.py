@@ -32,12 +32,8 @@ def get_days(bot,id):
 def video_upload(PATH, CAPTION,bot,user,password):
     time.sleep(5)
     print(f"Logging in as {user}")
-    for i in range(3):
-        try:
-            bot.video_upload(PATH, CAPTION)
-        except VideoNotUpload:
-            bot.login(user,password)
-            print(i)
+    bot.login(user,password)
+    bot.video_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
 
 def scheduled_upload():
