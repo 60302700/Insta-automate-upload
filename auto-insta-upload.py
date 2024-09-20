@@ -28,7 +28,7 @@ def get_days(bot,id):
     print(type(media))
     print(list(media))
     for i in media:
-        print(i,media[i])
+        print(i,media(i))
     day = [d for d in cap[:15] if d.isdigit()]
     return int(''.join(day))+1
 
