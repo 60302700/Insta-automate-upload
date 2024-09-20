@@ -13,6 +13,7 @@ def get_session_dict_from_env(env_var):
     return {}
 
 def get_days(bot):
+    print(f"User ID: {bot.user_id}")
     bot.user_clips(bot.user_id,1)
     media = bot.user_clips(bot.user_id,1)
     latest = media[0]
