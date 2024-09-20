@@ -18,7 +18,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
-        pip install instagrapi Pillow moviepy
+        pip install instagrapi Pillow moviepy bs4 requests
         pip install --upgrade instagrapi
     - name: Run upload script
       continue-on-error: true
