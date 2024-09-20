@@ -15,6 +15,8 @@ def get_session_dict_from_env(env_var):
 def get_days(user):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
     h = requests.get(f'https://www.instagram.com/{user}',headers=headers)
+    print(requests.status_code)
+    print(requests.text)
     soup = BeautifulSoup(h.text,'html.parser')
     posts = soup.find('meta',property="og:description")
     posts = posts.prettify()
