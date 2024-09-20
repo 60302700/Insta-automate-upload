@@ -27,9 +27,6 @@ def scheduled_upload():
     Insta = Client()
     Insta.login(USERNAME, PASSWORD)
     Insta.set_settings(SESSION)
-    x = Insta.user_id
-    if x:
-        print(x)
     PATH = "grandpa.mp4"
     CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
     video_upload(PATH, CAPTION,Insta)
