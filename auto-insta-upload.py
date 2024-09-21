@@ -64,4 +64,4 @@ def scheduled_upload_benson():
     CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
     video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
 scheduled_upload()
-scheduled_upload_benson()
+#scheduled_upload_benson()
