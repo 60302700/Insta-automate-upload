@@ -24,6 +24,7 @@ def get_session_dict_from_env(env_var):
     return int((posts.split()[-1]))'''
 
 def get_days(bot,id):
+    bot.delay[1,10]
     media = bot.user_medias(id,1)
     vid = media[0].dict()['caption_text']
     days = int(vid[vid.find(' '):vid.find('#meme')])
@@ -33,6 +34,7 @@ def video_upload(PATH, CAPTION,bot,user,password):
     time.sleep(5)
     print(f"Logging in as {user}")
     bot.login(user,password)
+    bot.delay[1,10]
     bot.video_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
 
@@ -43,8 +45,11 @@ def scheduled_upload():
     SESSION = get_session_dict_from_env(os.getenv('SESSION1'))
     id = 67987126316
     Insta = Client()
-    Insta.login(USERNAME, PASSWORD)
+    bot.delay[1,10]
     Insta.set_settings(SESSION)
+    bot.delay[1,10]
+    Insta.login(USERNAME, PASSWORD)
+    bot.delay[1,10]
     DAY = get_days(Insta,id)
     PATH = "grandpa.mp4"
     CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
@@ -57,8 +62,11 @@ def scheduled_upload_benson():
     SESSION = get_session_dict_from_env(os.getenv('SESSION2'))
     id = 67538479126
     Insta = Client()
+    bot.delay[1,10]
     Insta.login(USERNAME, PASSWORD) #674789
+    bot.delay[1,10]
     Insta.set_settings(SESSION)
+    bot.delay[1,10]
     DAY = get_days(Insta,id)
     PATH = "video.mp4"
     CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
