@@ -47,7 +47,6 @@ def timed_login(USERNAME, PASSWORD, SESSION):
     bot.delay[1,10]
     Insta.login(USERNAME, PASSWORD)
     bot.delay[1,10]
- 
     return Insta
 
 def scheduled_upload(ID, USERNAME, PASSWORD, SESSION):
@@ -65,7 +64,6 @@ def scheduled_upload_benson(ID, USERNAME, PASSWORD, SESSION):
     PATH = "video.mp4"
     CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
     video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
-<<<<<<< HEAD
 
 def scheduled_upload_sc(ID, USERNAME, PASSWORD, SESSION):
     time.sleep(10)
@@ -91,6 +89,3 @@ if __name__ == "__main__":
         # elif i == 4: scheduled_upload_aq(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
         # TODO: ACCOUNT 3 USER, PASS, SESSIOn
         # elif i == 4, i == 5, ... for future accounts
-=======
-scheduled_upload()
->>>>>>> refs/remotes/origin/main
