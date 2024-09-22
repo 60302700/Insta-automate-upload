@@ -53,7 +53,7 @@ def timed_login(USERNAME, PASSWORD, SESSION)
 def scheduled_upload(ID, USERNAME, PASSWORD, SESSION):
     time.sleep(10)
     Insta = timed_login(USERNAME, PASSWORD, SESSION)
-    DAY = get_days(Insta,id)
+    DAY = get_days(Insta,ID)
     PATH = "grandpa.mp4"
     CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
     video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
@@ -61,7 +61,7 @@ def scheduled_upload(ID, USERNAME, PASSWORD, SESSION):
 def scheduled_upload_benson(ID, USERNAME, PASSWORD, SESSION):
     time.sleep(10)
     Insta = timed_login(USERNAME, PASSWORD, SESSION)
-    DAY = get_days(Insta,id)
+    DAY = get_days(Insta,ID)
     PATH = "video.mp4"
     CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
     video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
@@ -69,7 +69,7 @@ def scheduled_upload_benson(ID, USERNAME, PASSWORD, SESSION):
 def scheduled_upload_sc(ID, USERNAME, PASSWORD, SESSION):
     time.sleep(10)
     Insta = timed_login(USERNAME, PASSWORD, SESSION)
-    DAY = get_days(Insta,id)
+    DAY = get_days(Insta,ID)
     PATH = f"{USERNAME.replace('.','_')}.mp4"
     CAPTION = f'''Day {DAY} #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
     if ID == USER_IDS.LYING.value: CAPTION += '#whyualwayslying #why'
