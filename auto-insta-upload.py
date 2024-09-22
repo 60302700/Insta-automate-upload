@@ -40,7 +40,7 @@ def video_upload(PATH, CAPTION,bot,user,password):
     bot.video_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
 
-def timed_login(USERNAME, PASSWORD, SESSION)
+def timed_login(USERNAME, PASSWORD, SESSION):
     Insta = Client()
     bot.delay[1,10]
     Insta.set_settings(SESSION)
