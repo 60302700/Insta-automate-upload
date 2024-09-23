@@ -1,4 +1,5 @@
 from instagrapi import Client , delay
+import instagrapi
 import os
 import time
 import json
