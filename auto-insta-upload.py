@@ -40,7 +40,7 @@ def video_upload(PATH, CAPTION,bot,user,password):
 
 def timed_login(USERNAME, PASSWORD, SESSION):
     bot = Client()
-    bot.delay_range[1,10]
+    bot.delay_range = [1, 10]  # Set delay range between 1 and 10 seconds
     bot.set_settings(SESSION)
     bot.login(USERNAME, PASSWORD)
     return bot
