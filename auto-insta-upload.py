@@ -1,4 +1,4 @@
-from instagrapi import Client , delay
+from instagrapi import Client
 import instagrapi
 import os
 import time
