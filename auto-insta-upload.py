@@ -53,22 +53,6 @@ def scheduled_upload(ID, USERNAME, PASSWORD, SESSION):
     time.sleep(10)
     Insta = timed_login(USERNAME, PASSWORD, SESSION)
     DAY = get_days(Insta,ID)
-    PATH = "grandpa.mp4"
-    CAPTION = f'''DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
-    video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
-
-def scheduled_upload_benson(ID, USERNAME, PASSWORD, SESSION):
-    time.sleep(10)
-    Insta = timed_login(USERNAME, PASSWORD, SESSION)
-    DAY = get_days(Insta,ID)
-    PATH = "video.mp4"
-    CAPTION = f"DAY {DAY} \n #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta"
-    video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
-
-def scheduled_upload_sc(ID, USERNAME, PASSWORD, SESSION):
-    time.sleep(10)
-    Insta = timed_login(USERNAME, PASSWORD, SESSION)
-    DAY = get_days(Insta,ID)
     PATH = f"{USERNAME.replace('.','_')}.mp4"
     CAPTION = f'''Day {DAY} #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
     if ID == USER_IDS.LYING.value: CAPTION += '#whyualwayslying #why'
@@ -85,7 +69,7 @@ if __name__ == "__main__":
 
         if i == 1: scheduled_upload(USER_IDS.GRANDPA.value, USERNAME, PASSWORD, SESSION)
         elif i == 2: scheduled_upload_benson(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
-        # elif i == 3: scheduled_upload_sc(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
-        # elif i == 4: scheduled_upload_aq(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
+        elif i == 3: scheduled_upload_sc(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
+        elif i == 4: scheduled_upload_aq(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
         # TODO: ACCOUNT 3 USER, PASS, SESSIOn
         # elif i == 4, i == 5, ... for future accounts
