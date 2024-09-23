@@ -26,7 +26,6 @@ def get_session_dict_from_env(env_var):
     return int((posts.split()[-1]))'''
 
 def get_days(bot,id):
-    bot.delay_range[1,10]
     media = bot.user_medias(id,1)
     vid = media[0].dict()['caption_text']
     days = int(vid[vid.find(' '):vid.find('#meme')])
@@ -36,7 +35,6 @@ def video_upload(PATH, CAPTION,bot,user,password):
     time.sleep(5)
     print(f"Logging in as {user}")
     bot.login(user,password)
-    bot.delay_range[1,10]
     bot.video_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
 
@@ -44,9 +42,7 @@ def timed_login(USERNAME, PASSWORD, SESSION):
     bot = Client()
     bot.delay_range[1,10]
     bot.set_settings(SESSION)
-    bot.delay_range[1,10]
     bot.login(USERNAME, PASSWORD)
-    bot.delay_range[1,10]
     return bot
 
 def scheduled_upload(ID, USERNAME, PASSWORD, SESSION):
