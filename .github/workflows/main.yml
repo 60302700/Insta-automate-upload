@@ -29,5 +29,11 @@ jobs:
         USERNAME2: ${{ secrets.USERNAME2 }}
         PASSWORD2: ${{ secrets.PASSWORD2 }}
         SESSION2: ${{ secrets.SESSION2 }}
+        USERNAME3: ${{ secrets.USERNAME3 }}
+        PASSWORD3: ${{ secrets.PASSWORD3 }}
+        SESSION3: ${{ secrets.SESSION3 }}
+        USERNAME4: ${{ secrets.USERNAME4 }}
+        PASSWORD4: ${{ secrets.PASSWORD4 }}
+        SESSION4: ${{ secrets.SESSION4 }}
       run: |
         python auto-insta-upload.py
