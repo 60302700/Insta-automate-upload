@@ -1,4 +1,4 @@
-from instagrapi import Client, delay_range
+from instagrapi import Client
 import os
 import time
 import json
