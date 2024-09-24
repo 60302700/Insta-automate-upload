@@ -18,8 +18,8 @@ def get_session_dict_from_env(env_var):
 def get_days(bot,id):
     media = bot.user_medias(id,1)
     vid = media[0].dict()['caption_text']
-    days = vid[vid.find('Day '):vid.find('#meme')].rsplit()[1]
-    return int(days)+1
+    print(int(vids.split()[1]))
+    return int(vids.split()[1])
     
 def video_upload(PATH, CAPTION,bot,user,password):
     time.sleep(5)
@@ -55,9 +55,9 @@ if __name__ == "__main__":
 
         try: 
             if i == 1: scheduled_upload(USER_IDS.GRANDPA.value, USERNAME, PASSWORD, SESSION)
-            if i == 2: scheduled_upload(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
-            if i == 3: scheduled_upload(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
-            if i == 4: scheduled_upload(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
+            #if i == 2: scheduled_upload(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
+            #if i == 3: scheduled_upload(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
+            #if i == 4: scheduled_upload(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
         except Exception as e:
             print(f"Doesn't work for {USERNAME}")
             print(e)
