@@ -53,9 +53,14 @@ if __name__ == "__main__":
         PASSWORD=str(os.getenv(f'PASSWORD{i}'))
         SESSION=get_session_dict_from_env(os.getenv(f'SESSION{i}'))
 
-        if i == 1: scheduled_upload(USER_IDS.GRANDPA.value, USERNAME, PASSWORD, SESSION)
-        if i == 2: scheduled_upload(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
-        elif i == 3: scheduled_upload(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
-        elif i == 4: scheduled_upload(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
+        try: 
+            if i == 1: scheduled_upload(USER_IDS.GRANDPA.value, USERNAME, PASSWORD, SESSION)
+            if i == 2: scheduled_upload(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
+            elif i == 3: scheduled_upload(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
+            elif i == 4: scheduled_upload(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
+        except e:
+            print(f"Doesn't work for {USERNAME}")
+            print(e)
+            continue
         # TODO: ACCOUNT 3 USER, PASS, SESSIOn
         # elif i == 4, i == 5, ... for future accounts
