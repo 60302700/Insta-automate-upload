@@ -14,21 +14,12 @@ def get_session_dict_from_env(env_var):
         except json.JSONDecodeError as e:
             print(f"Error decoding session data: {e}")
     return {}
-'''def get_days(user):
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-    h = requests.get(f'https://www.instagram.com/{user}',headers=headers)
-    print(requests.status_code)
-    print(requests.text)
-    soup = BeautifulSoup(h.text,'html.parser')
-    posts = soup.find('meta',property="og:description")
-    posts = posts.prettify()
-    posts = posts[1:posts.find('Posts')]
-    return int((posts.split()[-1]))'''
 
 def get_days(bot,id):
     media = bot.user_medias(id,1)
     vid = media[0].dict()['caption_text']
-    days = vid[vid.find(' '):vid.find('#meme')]
+    days = vid[vid.find('Day '):vid.find('#meme')]
+    print(days)
     return int(days)+1
     
 def video_upload(PATH, CAPTION,bot,user,password):
