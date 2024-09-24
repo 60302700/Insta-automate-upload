@@ -58,7 +58,7 @@ if __name__ == "__main__":
             if i == 2: scheduled_upload(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
             elif i == 3: scheduled_upload(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
             elif i == 4: scheduled_upload(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
-        except Exception e:
+        except Exception as e:
             print(f"Doesn't work for {USERNAME}")
             print(e)
             continue
