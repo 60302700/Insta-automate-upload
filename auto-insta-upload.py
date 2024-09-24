@@ -23,7 +23,7 @@ def get_days(bot,id):
     
 def video_upload(PATH, CAPTION,bot,user,password):
     time.sleep(5)
-    print(f"Logging in as {user}")
+    print(f"Logging in as {user+' '}")
     bot.login(user,password)
     bot.video_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
