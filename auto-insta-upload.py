@@ -28,7 +28,7 @@ def get_session_dict_from_env(env_var):
 def get_days(bot,id):
     media = bot.user_medias(id,1)
     vid = media[0].dict()['caption_text']
-    days = (vid[vid.find(' '):vid.find('#meme')]
+    days = vid[vid.find(' '):vid.find('#meme')]
     return int(days)+1
     
 def video_upload(PATH, CAPTION,bot,user,password):
