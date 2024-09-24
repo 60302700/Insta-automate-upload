@@ -63,8 +63,8 @@ if __name__ == "__main__":
         PASSWORD=str(os.getenv(f'PASSWORD{i}'))
         SESSION=get_session_dict_from_env(os.getenv(f'SESSION{i}'))
 
-        if i == 1: scheduled_upload(USER_IDS.GRANDPA.value, USERNAME, PASSWORD, SESSION)
-        elif i == 2: scheduled_upload_benson(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
+        #if i == 1: scheduled_upload(USER_IDS.GRANDPA.value, USERNAME, PASSWORD, SESSION)
+        if i == 2: scheduled_upload_benson(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
         elif i == 3: scheduled_upload_sc(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
         elif i == 4: scheduled_upload_aq(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
         # TODO: ACCOUNT 3 USER, PASS, SESSIOn
