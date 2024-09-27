@@ -7,21 +7,25 @@ on:
 
 jobs:
   upload:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    labels: [shared-runner]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.x'
+    
     - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
-        pip install instagrapi Pillow moviepy BeautifulSoup4 requests
+        pip install instagrapi==1.13.0 Pillow==9.0.1 moviepy==1.0.3 BeautifulSoup4==4.10.0 requests==2.27.1
         pip install --upgrade instagrapi
+    
     - name: Run upload script
-      continue-on-error: true
+      continue-on-error: true  # Only if you want to suppress all errors
       env:
         USERNAME1: ${{ secrets.USERNAME1 }}
         PASSWORD1: ${{ secrets.PASSWORD1 }}
@@ -37,3 +41,4 @@ jobs:
         SESSION4: ${{ secrets.SESSION4 }}
       run: |
         python auto-insta-upload.py
+
