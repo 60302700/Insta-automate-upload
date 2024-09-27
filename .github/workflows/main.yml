@@ -8,7 +8,6 @@ on:
 jobs:
   upload:
     runs-on: self-hosted
-    labels: [shared-runner]
     steps:
     - uses: actions/checkout@v3
     
