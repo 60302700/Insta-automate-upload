@@ -4,7 +4,6 @@ import time
 import json
 import requests
 from id_user import USER_IDS
-from bs4 import BeautifulSoup
 
 def get_session_dict_from_env(env_var):
     session_str = os.getenv(env_var)
