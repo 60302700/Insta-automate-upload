@@ -25,9 +25,8 @@ jobs:
         $pythonPath = "C:\Users\LocalAdmin\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe"
         Invoke-Expression "& '$wingetPath' upgrade --all "
         Invoke-Expression "& '$wingetPath' install --disable-interactivity ffmpeg"
-        
-        Invoke-Expression "& '$pythonPath' -m pip install --upgrade pip"
-        Invoke-Expression "& '$pythonPath' -m pip install instagrapi==1.13.0 Pillow==9.0.1 moviepy==1.0.3 BeautifulSoup4==4.10.0 requests==2.27.1"
+        python -m pip install --upgrade pip"
+        python -m pip install instagrapi==1.13.0 Pillow==9.0.1 moviepy==1.0.3 BeautifulSoup4==4.10.0 requests==2.27.1"
     
     - name: Run upload script
       continue-on-error: true  # Only if you want to suppress all errors
