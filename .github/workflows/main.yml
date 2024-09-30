@@ -24,7 +24,7 @@ jobs:
         $wingetPath = "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.23.1911.0_x64__8wekyb3d8bbwe\winget.exe"
         $pythonPath = "C:\Users\LocalAdmin\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe"
         Invoke-Expression "& '$wingetPath' upgrade --all"
-        Invoke-Expression "& '$wingetPath' install --disable-interactivity ffmpeg"
+        Invoke-Expression "& '$wingetPath' install ffmpeg  --exact --disable-interactivity --accept-source-agreements --accept-package-agreements"
 
     - name: Install dependencies
       shell: cmd
