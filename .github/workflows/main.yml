@@ -14,9 +14,11 @@ jobs:
     
     - name: Install dependencies
       shell: powershell
+       #upgrade --all
       run: |
-        "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.23.1911.0_x64__8wekyb3d8bbwe\winget.exe" upgrade --all
-        "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.23.1911.0_x64__8wekyb3d8bbwe\winget.exe" install -y ffmpeg
+        $wingetPath = Join-Path (Get-AppxPackage Microsoft.DesktopAppInstaller).InstallLocation "winget.exe"
+        Invoke-Expression "& '$wingetPath' upgrade --all "
+        Invoke-Expression "& '$wingetPath' install -y ffmpeg"
         python -m pip install --upgrade pip
         pip install instagrapi==1.13.0 Pillow==9.0.1 moviepy==1.0.3 BeautifulSoup4==4.10.0 requests==2.27.1
     
