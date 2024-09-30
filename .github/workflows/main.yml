@@ -16,7 +16,7 @@ jobs:
       shell: powershell
        #upgrade --all
       run: |
-        $wingetPath = Join-Path (Get-AppxPackage Microsoft.DesktopAppInstaller).InstallLocation "winget.exe"
+        $wingetPath = "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.23.1911.0_x64__8wekyb3d8bbwe\winget.exe"
         Invoke-Expression "& '$wingetPath' upgrade --all "
         Invoke-Expression "& '$wingetPath' install -y ffmpeg"
         python -m pip install --upgrade pip
