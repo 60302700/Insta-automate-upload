@@ -17,6 +17,7 @@ jobs:
       #  python-version: '3.x'
     
     - name: Install dependencies
+      shell: cmd
       run: |
         winget update
         winget install -y ffmpeg
@@ -25,6 +26,7 @@ jobs:
     
     - name: Run upload script
       continue-on-error: true  # Only if you want to suppress all errors
+      shell: cmd
       env:
         USERNAME1: ${{ secrets.USERNAME1 }}
         PASSWORD1: ${{ secrets.PASSWORD1 }}
