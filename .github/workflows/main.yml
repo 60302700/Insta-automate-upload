@@ -25,6 +25,7 @@ jobs:
         $pythonPath = "C:\Users\LocalAdmin\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe"
         Invoke-Expression "& '$wingetPath' upgrade --all"
         Invoke-Expression "& '$wingetPath' install ffmpeg  --exact --disable-interactivity --accept-source-agreements --accept-package-agreements"
+        Invoke-Expression "& '$wingetPath' install --id Microsoft.VisualStudio.2022.BuildTools --exact --disable-interactivity --accept-source-agreements --accept-package-agreements"
 
     - name: Install dependencies
       shell: cmd
