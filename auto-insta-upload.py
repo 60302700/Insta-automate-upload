@@ -41,6 +41,7 @@ def scheduled_upload(ID, USERNAME, PASSWORD, SESSION):
     CAPTION = f'''Day {DAY} #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
     if ID == USER_IDS[2]: CAPTION += '#whyualwayslying #why'
     video_upload(PATH, CAPTION,Insta,USERNAME,PASSWORD)
+    Insta.logout()
 
 USER_IDS = [
         67987126316,    # GRANDPA
