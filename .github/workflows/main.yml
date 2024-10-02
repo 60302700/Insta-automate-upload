@@ -9,19 +9,36 @@ jobs:
   upload:
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: '3.x'
+    - name: Random Time Sleep
+      shell: powershell
+      run: Start-Sleep -Seconds (60..120 | Get-Random)
+      
     - name: Install dependencies
+      shell: powershell
+       #upgrade --all
       run: |
-        sudo apt-get update
-        sudo apt-get install -y ffmpeg
-        pip install instagrapi Pillow moviepy BeautifulSoup4 requests
-        pip install --upgrade instagrapi
+        $wingetPath = "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.23.1911.0_x64__8wekyb3d8bbwe\winget.exe"
+        $pythonPath = "C:\Users\LocalAdmin\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe"
+        Invoke-Expression "& '$wingetPath' upgrade --all"
+        Invoke-Expression "& '$wingetPath' install ffmpeg  --exact --disable-interactivity --accept-source-agreements --accept-package-agreements"
+
+    - name: Install dependencies
+      shell: cmd
+       #upgrade --all
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install instagrapi Pillow moviepy BeautifulSoup4 requests
+    
     - name: Run upload script
-      continue-on-error: true
+      continue-on-error: true  # Only if you want to suppress all errors
+      shell: cmd
       env:
         USERNAME1: ${{ secrets.USERNAME1 }}
         PASSWORD1: ${{ secrets.PASSWORD1 }}
@@ -37,3 +54,5 @@ jobs:
         SESSION4: ${{ secrets.SESSION4 }}
       run: |
         python auto-insta-upload.py
+
+
