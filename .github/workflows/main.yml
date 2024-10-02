@@ -18,7 +18,7 @@ jobs:
         python-version: '3.x'
     - name: Random Time Sleep
       shell: powershell
-      run: Start-Sleep -Seconds (60..120 | Get-Random))
+      run: Start-Sleep -Seconds (60..120 | Get-Random)
       
     - name: Install dependencies
       shell: powershell
