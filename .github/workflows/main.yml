@@ -16,7 +16,10 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.x'
-    
+    - name: Random Time Sleep
+      shell: powershell
+      run: Start-Sleep -Duration (New-TimeSpan -Minutes (1..2 | Get-Random))
+      
     - name: Install dependencies
       shell: powershell
        #upgrade --all
