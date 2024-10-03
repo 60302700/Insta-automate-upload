@@ -55,7 +55,7 @@ USER_IDS = [
 if __name__ == "__main__":
     NO_OF_ACCOUNTS = len(USER_IDS)
 
-    for i in range(1,NO_OF_ACCOUNTS+1):
+    for i in range(1,NO_OF_ACCOUNTS):
         USERNAME=str(os.getenv(f'USERNAME{i}'))
         PASSWORD=str(os.getenv(f'PASSWORD{i}'))
         SESSION=get_session_dict_from_env(os.getenv(f'SESSION{i}'))
