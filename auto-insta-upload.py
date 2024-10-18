@@ -26,16 +26,15 @@ def video_upload(PATH,CAPTION,bot,user,password):
     bot.video_upload(PATH, CAPTION)
     print(f"Video uploaded: {PATH}")
 
-def timed_login(USERNAME, PASSWORD, SESSION):
+def timed_login(USERNAME, PASSWORD):
     bot = Client()
     bot.delay_range = [1, 10]  # Set delay range between 1 and 10 seconds
-    bot.set_settings(SESSION)
     bot.login(USERNAME, PASSWORD)
     return bot
 
-def scheduled_upload(ID, USERNAME, PASSWORD, SESSION):
+def scheduled_upload(ID, USERNAME, PASSWORD):
     time.sleep(10)
-    Insta = timed_login(USERNAME, PASSWORD, SESSION)
+    Insta = timed_login(USERNAME, PASSWORD)
     DAY = get_days(Insta,str(ID))
     PATH = f"{USERNAME.replace('.','_')}.mp4"
     CAPTION = f'''Day {DAY} #meme #trending #trending #viral #instagram #explorepage #explore #instagood #love #reels #follow #trend #like #photography #india #fyp #instadaily #tiktok #foryou #trendingreels #trendingnow #style #memes #photooftheday #music #reelsinstagram #viralpost #model #insta'''
@@ -65,7 +64,7 @@ if __name__ == "__main__":
             # if i == 2: scheduled_upload(USER_IDS.BENSON.value, USERNAME, PASSWORD, SESSION)
             # if i == 3: scheduled_upload(USER_IDS.LYING.value,USERNAME, PASSWORD, SESSION)
             # if i == 4: scheduled_upload(USER_IDS.BRO.value, USERNAME, PASSWORD, SESSION)
-            scheduled_upload(USER_IDS[i], USERNAME, PASSWORD, SESSION)
+            scheduled_upload(USER_IDS[i], USERNAME, PASSWORD)
         except Exception as e:
             print(f"Doesn't work for {USERNAME.replace('.','_').replace('_','.')}") # To print username to action logs
             print(e)
